@@ -1,0 +1,19 @@
+{
+  "name": "theaccountant",
+  "version": "1.0.0",
+  "description": "Mernstack application to maintain accounts of the coconut farm and mill of Gowri ricemill and farm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raamprasaadh/theaccountant.git"
+  },
+  "author": "Ram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Raamprasaadh/theaccountant/issues"
+  },
+  "homepage": "https://github.com/Raamprasaadh/theaccountant#readme"
+}
