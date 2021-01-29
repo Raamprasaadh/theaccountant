@@ -1,6 +1,7 @@
 const MONGOOSE = require("mongoose");
 const SCHEMA = MONGOOSE.Schema;
 
+const COLLECTION_NAME = "accounts";
 var accountsSchema = new SCHEMA({
 date:{
     type: Date,
@@ -34,6 +35,6 @@ desc:{
 
 });
 
-const ACCOUNTS = MONGOOSE.model("accounts",accountsSchema);
+const ACCOUNTS = MONGOOSE.model("accounts",accountsSchema,COLLECTION_NAME);
 
 module.exports = ACCOUNTS;

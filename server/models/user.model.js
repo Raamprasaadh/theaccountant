@@ -1,6 +1,7 @@
 const MONGOOSE = require("mongoose");
 const SCHEMA = MONGOOSE.Schema;
 
+const COLLECTION_NAME = "users";
 var usersSchema = new SCHEMA({
 userName:{
     type:String,
@@ -17,6 +18,6 @@ role:{
 }
 });
 
-const USERS = MONGOOSE.model("users", usersSchema);
+const USERS = MONGOOSE.model("users", usersSchema,COLLECTION_NAME);
 
 module.exports = USERS;
