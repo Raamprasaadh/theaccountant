@@ -11,9 +11,9 @@ ROUTER.route("/add").post((req,res)=>{
     var newRecord={};
     //mandatory
     newRecord.date = new Date(req.body.date);
-    newRecord.type = req.body.type;
+    newRecord.type = req.body.tor;
     newRecord.eir = req.body.eir;
-    newRecord.varapu = req.body.varapu;
+    newRecord.partition = req.body.partition;
     //optional
     if(req.body.amt){
         newRecord.amount = parseFloat(req.body.amt).toFixed(2);

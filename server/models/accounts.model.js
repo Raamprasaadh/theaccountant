@@ -18,7 +18,7 @@ eir:{
     type:String,
     required:true
 },
-varapu:{
+partition:{
     type:String,
     required:true
 },
@@ -26,7 +26,7 @@ tree:{
     type:Number,
 },
 typeOfAttack:{
-    type:String
+    type:JSON
 },
 desc:{
     type:String
