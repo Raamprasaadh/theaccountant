@@ -9,9 +9,8 @@ export default function AddRecordComponent() {
     const submit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3001/accounts/add',state)
-        .then((res)=>window.alert(res))
-        .catch(error=> {console.log(state);
-            window.alert(error)});
+        .then((res)=>window.alert("Record added successfully !"))
+        .catch(error=> { window.alert(error)});
     }
     
     const toggleChange =(e,field,aspect)=>{
@@ -23,7 +22,6 @@ export default function AddRecordComponent() {
     }
     //handlesChange in input type = text, radio, slelect
     const handleChange = (e, data) => {
-        console.log("handle change of :"+data+" : "+e.target.value);
         setState({
             ...state,
             [data]: e.currentTarget.value
