@@ -1,0 +1,86 @@
+[
+    [
+    {
+        "name":"Date",
+        "uid":"010101",
+        "element":"ReactDatePicker",
+        "className":"date",
+        "label":"Date",
+        "value":"YY/MM/DD"
+    },
+    {
+        "name":"Type Of Record",
+        "uid":"010102",
+        "type":"select",
+        "options":["Fertilizer/Medicine","Coconut Sales", "Leaf sales", "Maintenance", "Attack"],
+        "className":"tor",
+        "label":"Type Of Record"
+    },
+    {
+        "name":"Expense or Income or Record",
+        "uid":"010103",
+        "element":"input",
+        "type":"radio",
+        "className":"eir",
+        "label":"E/I/M",
+        "options":["Expense","Income","Record"],
+        "value":"Expense"
+    },
+    {
+        "name":"Partition",
+        "uid":"010104",
+        "element":"input",
+        "type":"text",
+        "className":"partition",
+        "label":"Partition",
+        "value":"A"
+    },
+    {
+        "name":"Tree no",
+        "uid":"010105",
+        "type":"number",
+        "className":"treeNo",
+        "label":"Tree No"
+    },
+    {
+        "name":"Amount",
+        "uid":"010106",
+        "element":"input",
+        "type":"number",
+        "className":"amt",
+        "label":"Amount"
+    },
+    {
+        "name":"Type Of Attack",
+        "uid":"010107",
+        "element":"input",
+        "type":"checkbox",
+        "className":"toa",
+        "label":"Type Of Attack",
+        "options":["Bud Rot","Root Rot","Weasel"]
+        
+    },
+    {
+        "name":"Description",
+        "uid":"010108",
+        "element":"input",
+        "type":"text",
+        "className":"desc",
+        "label":"Description",
+        "value":"Small notes"
+    }
+
+],
+{
+    "state":{
+        "date":"01/29/2021 04:20",
+        "tor":"",
+        "toa":{"Bud Rot":false,"Root Rot":false,"Weasel":false},
+        "desc":"",
+        "eir":"",
+        "partition":"",
+        "treeNo":"",
+        "amt":""
+    }
+}
+]
