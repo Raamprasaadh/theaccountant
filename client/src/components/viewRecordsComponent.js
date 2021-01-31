@@ -35,7 +35,7 @@ export default function ViewRecordsComponent() {
                                     {toa = Object.keys(record["typeOfAttack"]).find(key => record.typeOfAttack[key] === true);}
                                     
                                      return(
-                                     <tr>
+                                     <tr key={record._id}>
                                          <td>{record.date.substr(0,10)}</td>
                                          <td>{record.type}</td>
                                          <td>{record.eir}</td>
