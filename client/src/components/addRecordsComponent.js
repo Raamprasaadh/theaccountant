@@ -1,16 +1,19 @@
-import { useState } from 'react';
-import config from '../config/AddRecordConfig.json';
+import { useState,useEffect } from 'react';
+import {useDispatch} from 'react-redux';
 import axios from 'axios';
+import {addRecord} from '../actions';
+import config from '../config/AddRecordConfig.json';
+
 
 
 export default function AddRecordComponent() {
     const [state, setState] = useState(config[1].state);
     
-    const submit = (e) => {
+    const dispatch = useDispatch();
+    
+    const Submit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/accounts/add',state)
-        .then((res)=>window.alert("Record added successfully !"))
-        .catch(error=> { window.alert(error)});
+        useEffect(()=>{dispatch(addRecord(state))},[]);
     }
     
     const toggleChange =(e,field,aspect)=>{
@@ -29,7 +32,7 @@ export default function AddRecordComponent() {
     }
     return (
         <div className="addRcrd">
-            <form onSubmit={submit}>
+            <form onSubmit={Submit}>
                 {config[0].map((field) => {
 
                     if (field.type === "text") {
@@ -43,12 +46,14 @@ export default function AddRecordComponent() {
                         return (
                             <div key={field.uid} >
                                 <label className="formLabel">{field.label}</label>
-                                {field.options.map((option) => {
+                                {
+                                field.options.map((option) => {
 
                                     return (
-                                        <label><input type={field.type} value={option} checked={state[field.className] === option} onChange={(e) => handleChange(e, field.className)} />{option}</label>
+                                        <label key ={field.uid+option}><input type={field.type} value={option} checked={state[field.className] === option} onChange={(e) => handleChange(e, field.className)} />{option}</label>
                                     )
-                                })} 
+                                })
+                                } 
                             </div>
                         )
                     }
@@ -60,10 +65,10 @@ export default function AddRecordComponent() {
                                     field.options.map((option) => {
                                         
                                         return (
-                                            <label><input type={field.type} value={option} onChange={(e) => toggleChange(e, field.className, option)} />{option}</label>
+                                            <label key ={field.uid+option}><input type={field.type} value={option} onChange={(e) => toggleChange(e, field.className, option)} />{option}</label>
                                         )
                                     })
-                                }
+                                 }
                             </div>
                         )
                     }
@@ -88,7 +93,7 @@ export default function AddRecordComponent() {
                                         {
                                             field.options.map((option)=>{
                                             return(
-                                                <option value={option} onChange={(e)=>handleChange(e,field.className)}>{option}</option>
+                                                <option key ={field.uid+option} value={option} onChange={(e)=>handleChange(e,field.className)}>{option}</option>
                                             )
                                          })
                                         }
