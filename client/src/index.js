@@ -10,7 +10,7 @@ import Reducers from './reducers';
 
 const MIDDLEWARE = applyMiddleware(thunk);
 
-const STORE = createStore(Reducers,MIDDLEWARE,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const STORE = createStore(Reducers,MIDDLEWARE);
 
 ReactDOM.render(
   <Provider store={STORE}>
