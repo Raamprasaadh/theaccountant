@@ -1,24 +1,13 @@
 import { useState,useEffect } from 'react';
-import{updateRecords} from '../actions';
+import{fetchRecords} from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
 export default function ViewRecordsComponent() {
-    
-    // const records = useSelector(state=>state.appDetails.Records);
-    // useEffect(useDispatch(updateRecords()),[]);
-    
-    const [records, setRecords] = useState([]);
-    useEffect(() => {
-        axios.get("http://localhost:3001/accounts/")
-            .then(res => {
-                setRecords( res.data );
-            })
-            .catch(err => {
-                window.alert(err);
-                return ""
-            })
-    },[])
+    const dispatch = useDispatch();
+    useEffect(()=>{dispatch(fetchRecords())},[]);
+
+     const records = useSelector(state=>state.appDetails.Records);
     return (
         <div className="viewRcrds">
             {(records) ?

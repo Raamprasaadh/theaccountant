@@ -2,13 +2,11 @@ import axios from 'axios';
 
 
 export const fetchRecords= ()=>{
-    return 0;
-//     return async function(dispatch){
-//         await axios.get('http://localhost:3001/accounts')
-//     .then(res=>{return {type:"UPDATE_RECORDS",
-//     payload:res.data}})
-//     .catch (err => dispatch(updateError(err)));
-// }
+    return function(dispatch){
+        return axios.get('http://localhost:3001/accounts')
+    .then(res=>{dispatch(updateRecords(res.data))})
+    .catch (err => dispatch(updateError(err)));
+}
 }
 
 export const updateRecords=(data)=>{
