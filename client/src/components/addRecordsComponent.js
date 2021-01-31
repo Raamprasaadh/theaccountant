@@ -13,7 +13,7 @@ export default function AddRecordComponent() {
     
     const Submit = (e) => {
         e.preventDefault();
-        useEffect(()=>{dispatch(addRecord(state))},[]);
+        dispatch(addRecord(state));
     }
     
     const toggleChange =(e,field,aspect)=>{

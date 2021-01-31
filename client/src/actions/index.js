@@ -12,7 +12,9 @@ export const fetchRecords= ()=>{
 export const addRecord= (data)=>{
     return function(dispatch){
         return axios.post('http://localhost:3001/accounts/add',data)
-    .then(res=>{dispatch(fetchRecords())})
+    .then(res=>{
+        window.alert("Record added successfully !");
+        dispatch(fetchRecords())})
     .catch (err => dispatch(updateError(err)));
 }
 }
