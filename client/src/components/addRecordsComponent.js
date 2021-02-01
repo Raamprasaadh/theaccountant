@@ -1,6 +1,5 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import {useDispatch} from 'react-redux';
-import axios from 'axios';
 import {addRecord} from '../actions';
 import config from '../config/AddRecordConfig.json';
 

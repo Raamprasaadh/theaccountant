@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Raamprasaadh/theaccountant/issues"
   },
-  "homepage": "https://github.com/Raamprasaadh/theaccountant#readme"
+  "homepage": "https://github.com/Raamprasaadh/theaccountant#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2"
+  }
 }
